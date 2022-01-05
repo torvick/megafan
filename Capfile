@@ -7,10 +7,11 @@ require 'capistrano/rails'
 require 'capistrano/rails/db'
 require 'capistrano/bundler'
 require 'capistrano/rvm'
-require 'capistrano/puma'
 require 'capistrano/rake'
-install_plugin Capistrano::Puma
-# install_plugin Capistrano::Puma::Daemon
+require 'capistrano/puma'
+install_plugin Capistrano::Puma  # Default puma tasks
+install_plugin Capistrano::Puma::Nginx
+install_plugin Capistrano::Puma::Systemd
 
 # require 'capistrano/dotenv'
 
