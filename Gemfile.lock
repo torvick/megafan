@@ -1495,7 +1495,7 @@ DEPENDENCIES
   capistrano-sidekiq
   capistrano3-puma
   capybara (>= 3.26)
-  daemons
+  daemons (~> 1.2, >= 1.2.3)
   devise
   devise-i18n
   haml (~> 5.2, >= 5.2.2)
