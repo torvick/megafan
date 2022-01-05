@@ -10,6 +10,8 @@ require 'capistrano/rvm'
 require 'capistrano/puma'
 require 'capistrano/rake'
 install_plugin Capistrano::Puma
+install_plugin Capistrano::Puma::Daemon
+
 # require 'capistrano/dotenv'
 
 # require 'capistrano/sidekiq'

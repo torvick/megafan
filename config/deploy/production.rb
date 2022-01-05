@@ -1,8 +1,8 @@
 # Change these
-server '34.222.157.235', port: 22, roles: [:web, :app, :db], primary: true
+server '18.206.163.245', port: 22, roles: [:web, :app, :db], primary: true
 
-set :repo_url,        'git@github.com:uulala-inc/Uulala-Mass-Payments-Redesign.git'
-set :application,     'panel-mass-payout'
+set :repo_url,        'git@github.com:Fernando420/megafan.git'
+set :application,     'megafan'
 set :user,            'ubuntu'
 set :puma_threads,    [4, 16]
 set :puma_workers,    0
@@ -23,8 +23,7 @@ set :puma_pid,        "#{shared_path}/tmp/pids/puma.pid"
 set :puma_access_log, "#{release_path}/log/puma.error.log"
 set :puma_error_log,  "#{release_path}/log/puma.access.log"
 # ‎⁨Macintosh HD⁩ ▸ ⁨Usuarios⁩ ▸ ⁨torvik⁩ ▸ ⁨Documents⁩ ▸ ⁨Credenciales⁩ ▸ ⁨UULALA-NEW⁩
-# set :ssh_options,     {forward_agent: true, user: fetch(:user), keys: %w(/Users/torvik/Documents/Credenciales/Aws/UULALA-NEW/app-client-sales.pem)}
-set :ssh_options,     {forward_agent: true, user: fetch(:user), keys: %w(/home/fernando/Documents/Credenciales/Uulala/app-client-sales.pem)}
+set :ssh_options,     {forward_agent: true, user: fetch(:user), keys: %w(/home/fernando/Documents/Credenciales/Gym/all-general.pem)}
 set :puma_preload_app, true
 set :puma_worker_timeout, nil
 set :puma_init_active_record, true  # Change to false when not using ActiveRecord
