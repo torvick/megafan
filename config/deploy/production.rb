@@ -27,6 +27,7 @@ set :ssh_options,     {forward_agent: true, user: fetch(:user), keys: %w(/home/f
 set :puma_preload_app, true
 set :puma_worker_timeout, nil
 set :puma_init_active_record, true  # Change to false when not using ActiveRecord
-set :linked_files,  fetch(:linked_files,  []).push('.env.production')
+# set :linked_files,  fetch(:linked_files,  []).push('.env.production')
+set :linked_files, fetch(:linked_files, []).push("config/master.key")
 # set :linked_dirs,   fetch(:linked_dirs,   []).push('log','public/system')
 set :keep_releases, 1

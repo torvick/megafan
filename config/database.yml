@@ -82,5 +82,5 @@ test:
 production:
   <<: *default
   database: megafan_production
-  username: megafan
-  password: <%= ENV['MEGAFAN_DATABASE_PASSWORD'] %>
+  # username: megafan
+  # password: <%= ENV['MEGAFAN_DATABASE_PASSWORD'] %>
