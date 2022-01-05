@@ -1,0 +1,24 @@
+%div.form-group.col-4
+  %strong#error-name.error-msg
+    = f.text_field :name, class: 'form-input', required: true,id:"name",value: @category.name
+    %label.form-label{for: "name"}= t('general.name')
+    %p#text-name.hide= t('errors.name')
+
+%div.form-group.col-4
+  %strong#error-description.error-msg
+    = f.text_field :description, class: 'form-input', required: true,id:"description",value: @category.description
+    %label.form-label{for: "description"}= t('general.description')
+    %p#text-description.hide= t('errors.description')
+
+%div.form-group.col-4
+  %strong#error-value.error-msg
+    = f.number_field :value, class: 'form-input', required: true,id:"value",value: @category.value
+    %label.form-label{for: "value"}= t('general.value')
+    %p#text-value.hide= t('errors.value')
+
+
+%div.links.col-9.pt-4
+  %a.btn.btn-link{href: "/categories"}= t('buttons.back')
+
+%div.button.col-3.pt-4
+  %button.btn.btn-primary= t('buttons.save')

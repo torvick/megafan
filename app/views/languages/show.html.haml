@@ -1,0 +1,19 @@
+%div.container
+  %div.row
+    %div.card
+      %div.row
+        %div.col-4.p-2
+          %h1=t('general.name')
+          %h2= @language.name
+
+        %div.col-4.p-2
+          %h1=t('general.description')
+          %h2= @language.description
+
+        %div.col-4.p-2
+          %h1=t('general.value')
+          %h2= @language.value
+    
+    
+        %div.col-12
+          %a.btn.btn-primary{href: "/languages"}= t('buttons.back')

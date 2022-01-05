@@ -1,0 +1,35 @@
+@import 'variables';
+
+%grid{
+    display:grid;
+    grid-column-gap: $column-separator;
+    grid-row-gap: $column-separator;
+    padding: $column-separator;
+    padding: 0px;
+}
+
+.nopadding{
+    padding: 0px;
+}
+
+/* Colors */
+
+.notoverflow{
+    overflow: hidden;
+}
+
+.relative{
+    position: relative;
+}
+
+.nolink
+{
+    text-decoration:none;
+    color: $color-white;
+}
+
+.nolink:hover
+{
+    text-decoration:none;
+    color: $color-white;
+}

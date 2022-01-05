@@ -1,0 +1,57 @@
+%nav#sidebar
+  %div.sidebar-header{align: "center"}
+    %div
+      %div.logo
+        %img{src: "https://lh3.googleusercontent.com/S1Z9u69NRTEkPuhJCClVtu03ScHDaQBzjjDqiqDm05aK8vlrAZuq3_k7G_OBwIVLdnfW"}
+          %h2 
+            ID:
+            = current_user.id
+          %h2
+            Username:
+            = current_user.username
+          %h2 
+            = t('general.email')
+            = current_user.email
+
+    %div.col-12.logomenu.nopadding
+      %div.container
+        %ul.list-unstyled.components{style: "margin-top:20px"}
+
+          %li.only{style: "margin-top:10px;"}
+            %a#Home.link-home{href: "/"}
+              = image_tag 'icons/home.svg', class: 'sidebar-button-img' 
+              %strong= t('sidebar.home.title')
+
+          %li.only{style: "margin-top:10px;"}
+            %a#Categories.link-home{href: "/categories"}
+              = image_tag 'icons/categories.svg', class: 'sidebar-button-img' 
+              %strong= t('sidebar.categories.title')
+
+          %li.only{style: "margin-top:10px;"}
+            %a#Languages.link-home{href: "/languages"}
+              = image_tag 'icons/language.svg', class: 'sidebar-button-img' 
+              %strong= t('sidebar.languages.title')
+
+          %li.only{style: "margin-top:10px;"}
+            %a#User.link-home{href: "/users"}
+              = image_tag 'icons/admin_cuentas.svg', class: 'sidebar-button-img' 
+              %strong= t('sidebar.users.title')
+
+          %li.only{style: "margin-top:10px;"}
+            %a#Clients.link-home{href: "/clients"}
+              = image_tag 'icons/users.svg', class: 'sidebar-button-img' 
+              %strong= t('sidebar.clients.title')
+          
+          %li.only{style: "margin-top:10px;"}
+            %a#Triviums.link-home{href: "/triviums"}
+              = image_tag 'icons/reports.svg', class: 'sidebar-button-img' 
+              %strong= t('sidebar.triviums.title')
+                    
+
+          %li.only{style: "margin-top:400px;"}
+  
+          %li{style: "margin-top:10px"}
+            = link_to destroy_user_session_path, method: :delete, class: 'sidebar-button font-white', id: 'logout-button' do
+              = image_tag 'icons/door.svg', class: 'sidebar-button-img'
+              = t('sidebar.logout.title')
+ 

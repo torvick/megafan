@@ -1,0 +1,7 @@
+%div.row.pt-4
+  %div.card
+    
+    = form_for :categories, :url => { :action => "create"}, method: 'POST', :html => {:class => "form row"} do |f|
+      = render partial: 'form_fields', locals: {f: f}
+
+      

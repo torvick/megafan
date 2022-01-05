@@ -1,0 +1,25 @@
+%html
+  %head
+    %title Megafan
+    = csrf_meta_tags
+    = csp_meta_tag
+
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag 'sidebar', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag 'validations', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag 'graphics', 'data-turbolinks-track': 'reload'
+    %link{rel: "stylesheet", href: "https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css"}
+    %script{src: "https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"}
+
+  %body
+    %div.main-container.mx-auto
+      %div.main-grid
+        %nav.container-nav
+          = render partial: 'layouts/sidebar'
+        %div.topbar
+          = render partial: 'layouts/topbar'
+          %div#notifications.mt-4
+            = render partial: 'notifications/flash'
+          %div.container
+            = yield

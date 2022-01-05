@@ -1,0 +1,11 @@
+%tr
+  %td= language.name
+  %td= language.description
+  %td= language.value
+  %td
+    %a.link-table{href: "/languages/#{language.id}/edit"}
+      = t('buttons.edit')
+  %td
+    %a.link-table{href: "/languages/#{language.id}"}
+      = t('buttons.show')
+    

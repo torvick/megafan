@@ -1,0 +1,29 @@
+@import '../../assets/stylesheets/tools/utilities';
+@import '../../assets/stylesheets/tools/variables';
+
+.nav{
+  display: flex;
+  padding: 10px;
+  .information{
+    width: 80%;
+    h1{
+      font-size: $font-size * 2.4;
+      font-family: $monserrat;
+      font-weight: 400;
+      color: $color-yellow;
+      margin-bottom: 0;
+    }
+    h2{
+      font-size: $font-size;
+      font-family: $monserrat;
+      font-weight: 400;
+      color: $color-yellow;
+      margin-top: 0;
+    }
+  }
+}
+
+.topbar{
+  background-color: $color-white;
+  height: 73%;
+}

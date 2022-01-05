@@ -1,0 +1,13 @@
+%tr
+  %td= client.name
+  %td= client.lt_name
+  %td= client.email
+  %td= client.phone
+  %td= client.dob
+  %td
+    %a.link-table{href: "/clients/#{client.id}/edit"}
+      = t('buttons.edit')
+  %td
+    %a.link-table{href: "/clients/#{client.id}"}
+      = t('buttons.show')
+    

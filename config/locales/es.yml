@@ -1,0 +1,86 @@
+es:
+  general:
+    name: 'Nombre'
+    last_name: 'Apellido'
+    email: 'Correo Electronico'
+    phone: 'Telefono'
+    username: 'Nombre de Usuario'
+    password: 'Contraseña'
+    privacy: 'Política de privacidad y términos legales'
+    clients: 'Clientes'
+    users_actived: 'Us. Activos'
+    facebook: 'Facebook'
+    instagram: 'Instagram'
+    tik_tok: 'Tik Tok'
+    organic: 'Organicos'
+    questions: 'Preguntas'
+    answers: 'Respuestas'
+    question: 'Pregunta'
+    answer: 'Respuesta'
+    answer_corrects: 'Resp Correctas'
+    correct: 'Correcta'
+    dob: "Fech. Nac."
+    triviums_lose: 'Trivias Perdidas'
+    triviums_winner: 'Trivias Ganadas'
+    available: "Disponible"
+    type: 'Tipo de Balance'
+    gender: 'Sexo'
+    country: 'Pais'
+  graphics:
+    users_total: 'Usuarios Totales'
+    users_facebook: 'Usuarios Facebook'
+    users_instagram: 'Usuarios Instagram'
+    users_tiktok: 'Usuarios Tiktok'
+    users_organics: 'Usuarios Organics'
+  status: 
+    actived: "Activo"
+    inactived: "Inactivo"
+    finished: 'Finalizado'
+    female: 'Mujer'
+    male: 'Hombre'
+    other: 'Otro'
+  sidebar:
+    home:
+      title: 'Inicio'
+    users:
+      title: 'Usuarios'
+      new: 'Nuevo Usuario'
+      edit: 'Editar Usuario'
+      list: 'Listar Usuarios'
+      show: 'Ver Usuario'
+    categories:
+      title: 'Categorias'
+      new: 'Nueva Categoria'
+      edit: 'Editar Categoria'
+      list: 'Listar Categorias'
+      show: 'Ver Categoria'
+    languages:
+      title: 'Lenguajes'
+      new: 'Nuevo Lenguaje'
+      edit: 'Editar Lenguaje'
+      list: 'Listar Lenguajes'
+      show: 'Ver Lenguaje'
+    clients:
+      title: 'Clientes'
+      list: 'Listar Clientes'
+      show: 'Ver Cliente'
+    triviums:
+      title: 'Trivias'
+      new: 'Nueva Trivia'
+      edit: 'Editar Trivia'
+      list: 'Listar Trivias'
+      show: 'Ver Trivia'
+    logout:
+      title: 'Salir'
+  buttons:
+    login: 'Iniciar'
+    show: 'Ver'
+    edit: 'Editar'
+    save: 'Guardar'
+    back: 'Atras'
+    add: 'Agregar'
+  errors:
+    password: 'Mínimo seis caracteres, al menos una letra mayúscula, una letra minúscula, un número y un carácter especial'
+    email: 'Ingrese un email valido'
+    phone: 'Ingrese una telefono valida, la telefono debe de contener solo numeros'
+    confirmPassword: "La contraseña y la contraseña de confirmación deben ser iguales"

@@ -1,0 +1,11 @@
+%tr
+  %td= category.name
+  %td= category.description
+  %td= category.value
+  %td
+    %a.link-table{href: "/categories/#{category.id}/edit"}
+      = t('buttons.edit')
+  %td
+    %a.link-table{href: "/categories/#{category.id}"}
+      = t('buttons.show')
+    

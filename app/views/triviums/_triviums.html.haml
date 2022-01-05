@@ -1,0 +1,14 @@
+%table.table.display.responsive.text-center{id: 'table_desing'}
+  %thead
+    %th= t('general.name')
+    %th= t('general.description')
+    %th= t('general.validity')
+    %th= t('general.duration')
+    %th= t('general.category')
+    %th= t('general.language')
+    %th= t('general.status')
+    %th= t('buttons.edit')
+    %th= t('buttons.show')
+  %tbody
+    - if @triviums.any?
+      = render partial: 'triviums/trivium', collection: @triviums

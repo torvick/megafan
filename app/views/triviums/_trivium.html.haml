@@ -1,0 +1,15 @@
+%tr
+  %td= trivium.name
+  %td= trivium.description
+  %td= "#{trivium.initial_date.strftime('%y-%m-%d')} A #{trivium.finish_date.strftime('%y-%m-%d')}" 
+  %td= "#{trivium.dt_h} Hr #{trivium.dt_min} Min"
+  %td= trivium.category&.name
+  %td= trivium.language.name
+  %td= t("status.#{trivium.status}")
+  %td
+    %a.link-table{href: "/triviums/#{trivium.id}/edit"}
+      = t('buttons.edit')
+  %td
+    %a.link-table{href: "/triviums/#{trivium.id}"}
+      = t('buttons.show')
+    

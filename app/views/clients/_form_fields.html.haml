@@ -1,0 +1,47 @@
+%div.form-group.col-4
+  %strong#error-name.error-msg
+    = f.text_field :name, class: 'form-input', required: true,id:"name",value: @client.name
+    %label.form-label{for: "name"}= t('general.name')
+    %p#text-name.hide= t('errors.name')
+
+%div.form-group.col-4
+  %strong#error-mdd_name.error-msg
+    = f.text_field :mdd_name, class: 'form-input',id:"mdd_name",value: @client.mdd_name
+    %label.form-label{for: "mdd_name"}= t('general.mdd_name')
+    %p#text-mdd_name.hide= t('errors.mdd_name')
+
+%div.form-group.col-4
+  %strong#error-last_name.error-msg
+    = f.text_field :lt_name, class: 'form-input', required: true,id:"last_name",value: @client.lt_name
+    %label.form-label{for: "last_name"}= t('general.last_name')
+    %p#text-last_name.hide= t('errors.last_name')
+
+%div.form-group.col-4
+  %strong#error-sc_last_name.error-msg
+    = f.text_field :sc_lt_name, class: 'form-input', required: true,id:"sc_last_name",value: @client.lt_name
+    %label.form-label{for: "sc_last_name"}= t('general.sc_last_name')
+    %p#text-sc_last_name.hide= t('errors.sc_last_name')
+
+%div.form-group.col-4
+  %strong#error-display_name.error-msg
+    = f.text_field :display_name, class: 'form-input', required: true,id:"display_name",value: @client.display_name
+    %label.form-label{for: "display_name"}= t('general.display_name')
+    %p#text-display_name.hide= t('errors.display_name')
+    
+%div.form-group.col-4
+  %strong#error-phone.error-msg
+    = f.text_field :phone, class: 'form-input', required: true,id:"phone",value: @client.phone
+    %label.form-label{for: "phone"}= t('general.phone')
+    %p#text-phone.hide= t('errors.phone')
+    
+%div.form-group.col-4
+  %strong#error-email.error-msg
+    = f.text_field :email, class: 'form-input', required: true,id:"email",value: @client.email
+    %label.form-label{for: "email"}= t('general.email')
+    %p#text-email.hide= t('errors.email')
+    
+%div.links.col-9.pt-4
+  %a.btn.btn-link{href: "/clients"}= t('buttons.back')
+
+%div.button.col-3.pt-4
+  %button.btn.btn-primary= t('buttons.save')

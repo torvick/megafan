@@ -1,0 +1,12 @@
+%table.table.responsive.text-center{id: 'table_desing'}
+  %thead
+    %th= t('general.name')
+    %th= t('general.last_name')
+    %th= t('general.email')
+    %th= t('general.phone')
+    %th= t('general.username')
+    %th= t('buttons.edit')
+    %th= t('buttons.show')
+  %tbody
+    - if @users.any?
+      = render partial: 'users/user', collection: @users

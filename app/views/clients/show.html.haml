@@ -1,0 +1,60 @@
+%div.container
+  %div.row
+    %div.card
+      %div.row
+        %div.col-3
+          
+          %img.img-client{src: "#{@client.avatar.present? ? @client.avatar : 'https://s3-us-west-2.amazonaws.com/uulala-public/undefined/avatar_1563298771211.png' }"}
+         
+        %div.col-9.row
+
+          %div.col-4.p-2
+            %h1=t('general.name')
+            %h2= @client.display_name
+      
+          %div.col-4.p-2
+            %h1=t('general.email')
+            %h2= @client.email
+      
+          %div.col-4.p-2
+            %h1=t('general.phone')
+            %h2= @client.phone
+  
+          %div.col-4.p-2
+            %h1=t('general.dob')
+            %h2= @client.dob
+    
+          %div.col-4.p-2
+            %h1=t('general.role')
+            %h2= @client.role.name
+          
+          %div.col-4.p-2
+            %h1=t('general.country')
+            %h2= @client.country.name
+          
+          %div.col-4.p-2
+            %h1=t('general.gender')
+            %h2= t("status.#{@client.gender}")
+
+        %div.col-4
+          %h1= t('general.triviums_winner')
+          %h2= @client.games.where(winner: true).count
+        
+        %div.col-4
+          %h1= t('general.triviums_lose')
+          %h2= @client.games.where(winner: false).count
+
+        %div.col-4
+          %h1= t('general.ranking')
+          %h2= @client.ranking.name
+
+        %div.col-12
+          %h1= t('general.balances')
+          = render :partial => 'balance', collection: @client.balances 
+
+        %div.col-12.pt-3
+          %h1= t('general.social_networks')
+          = render :partial => 'social_network', collection: @client.social_networks 
+    
+        %div.col-12.pt-3
+          %a.btn.btn-primary{href: "/clients"}= t('buttons.back')

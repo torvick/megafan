@@ -1,0 +1,13 @@
+%tr
+  %td= user.name
+  %td= user.last_name
+  %td= user.email
+  %td= user.phone
+  %td= user.username
+  %td
+    %a.link-table{href: "/users/#{user.id}/edit"}
+      = t('buttons.edit')
+  %td
+    %a.link-table{href: "/users/#{user.id}"}
+      = t('buttons.show')
+    

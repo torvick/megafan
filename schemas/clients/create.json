@@ -1,0 +1,28 @@
+{
+  "type": "object",
+  "required": [
+    "email",
+    "password",
+    "phone",
+    "name",
+    "lt_name",
+    "gender",
+    "dob",
+    "type_register",
+    "country_id"
+  ],
+  "properties": {
+    "email": { "type": "string", "minLength": 1 },
+    "password": { "type": "string", "minLength": 1 },
+    "phone": { "type": "string", "minLength": 8 },
+    "name": { "type": "string", "minLength": 1 },
+    "mdd_name": { "type": "string" },
+    "lt_name": { "type": "string", "minLength": 1 },
+    "sc_lt_name": { "type": "string" },
+    "display_name": { "type": "string" },
+    "gender": { "type": "string","enum": ["female", "male", "other"] },
+    "dob": { "type": "string", "minLength": 1 },
+    "country_id": { "type": "string", "minLength": 1 },
+    "type_register": { "type": "string","enum": ["facebook", "instagram", "tik_tok","organic"] }
+  }
+}

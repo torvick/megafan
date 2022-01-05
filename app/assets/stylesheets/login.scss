@@ -1,0 +1,53 @@
+@import '../../assets/stylesheets/tools/utilities';
+@import '../../assets/stylesheets/tools/variables';
+
+.body_login{
+  background: $color-yellow;
+}
+
+.authentication{
+  width: 670px;
+  padding-top: 80PX;
+  margin: 0 auto;
+}
+
+.header{
+  display: flex;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  .header-left{
+    width: 50%;
+    a{
+      color: $color-black;
+      padding: 10px;
+    }
+  }
+}
+
+.content{
+    border: 1px solid black;
+    padding: 35px;
+    background-color: white;
+}
+
+.new_user{
+  .error-msg{
+    font-size: 9px;
+    font-family: $monserrat;
+    font-weight: 100;
+    p{
+      margin: 0;
+      color: $color-red;
+    }
+  }
+  .border-red {
+    border-color: $color-red !important;
+  }
+  .hide{
+    display: none;
+  }
+  position: relative;
+}
+
+
+

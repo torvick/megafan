@@ -1,0 +1,11 @@
+%div.row
+  %div.card
+    = form_for :users, :url => { :action => "update"}, method: 'PUT', :html => {:class => "form row"} do |f|
+      = render partial: 'form_fields', locals: {f: f}
+
+      
+      %div.links.col-9.pt-4
+        %a.btn.btn-link{href: "/users"}= t('buttons.back')
+      
+      %div.button.col-3.pt-4
+        %button.btn.btn-primary= t('buttons.save')

@@ -1,0 +1,42 @@
+@import '../../assets/stylesheets/tools/utilities';
+@import '../../assets/stylesheets/tools/variables';
+
+.card_home{
+  h1{
+    font-size: $font-size * 1.5;
+  }
+  .icon{
+    padding: 5px;
+    text-align-last: center;
+  }
+  display: flex;
+  color: white;
+  padding: 10px;
+  margin: 10px;
+  box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.10);
+}
+
+.card_one{
+  border-radius: 10px;
+  background: $color-white;
+  border: 1px solid $color-yellow;
+}
+.card_two{
+  border-radius: 10px;
+  background: $color-white;
+  border: 1px solid $color-yellow;
+}
+.card_three{
+  border-radius: 10px;
+  background: $color-white;
+  border: 1px solid $color-yellow;
+}
+.card_four{
+  border-radius: 10px;
+  background: $color-white;
+  border: 1px solid $color-yellow;
+}
+
+.icon-home{
+  width: 40px;
+}

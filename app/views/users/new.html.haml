@@ -1,0 +1,25 @@
+%div.row.pt-4
+  %div.card
+    
+    = form_for :users, :url => { :action => "internal_create"}, method: 'POST', :html => {:class => "form row"} do |f|
+      = render partial: 'form_fields', locals: {f: f}
+
+      %div.form-group.col-4
+        %strong#error-password.error-msg
+          = f.password_field :password, class: 'form-input',id:"password"
+          %label.form-label{for: "password"}= t('general.password')
+          %p#text-password.hide= t('errors.password')
+          
+      %div.form-group.col-4
+        %strong#error-password.error-msg
+          = f.password_field :password_confirmation, class: 'form-input',id:"confirmPassword"
+          %label.form-label{for: "confirmPassword"}= t('general.password')
+          %p#text-confirmPassword.hide= t('errors.confirmPassword')
+
+      
+      %div.links.col-9.pt-4
+        %a.btn.btn-link{href: "/users"}= t('buttons.back')
+      
+      %div.button.col-3.pt-4
+        %button.btn.btn-primary= t('buttons.save')
+      

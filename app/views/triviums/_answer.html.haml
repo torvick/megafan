@@ -1,0 +1,70 @@
+.del_answer{id: "answer_#{child_index}"}
+  %div.row
+    - if @type == 'text'
+      %div.form-group.col-5
+        %strong#error-answer.error-msg
+          = text_field_tag 'questions[][answers][][answer]',nil, {class: 'form-input', required: true,id:"answer"}
+          %label.form-label{for: "answer"}= t('general.answer')
+          %p#text-answer.hide= t('errors.answer')
+    - if @type == 'img'
+      %div.col-5.row.pt-3
+        %div#file-answer.file-answer.col-8
+          = file_field_tag '', {class: '',id:"answer", accept:"image/png, image/jpeg"}
+        %div.col-4
+          %img.show-image{src:"", alt: "",id: 'show-img'}
+        = hidden_field_tag 'questions[][answers][][answer]'
+    - if @type == 'bool'
+      %div.col-5.pt-4
+        =check_box_tag 'questions[][answers][][answer]' , id: 'answer', class: 'form-check-input'
+        %label.form-check-label{for: "answer"}
+          = t('general.True/False')
+    
+    - if @type != 'bool'
+      %div.col-3.pt-4
+        %div.form-check.form-switch
+          =check_box_tag 'questions[][answers][][correct]', true,false , id: 'correct', class: 'form-check-input'
+          %label.form-check-label{for: "correct"}
+            = t('general.correct')
+            ?
+    = hidden_field_tag 'questions[][answers][][type_answer]', @type
+    %div.col-2
+      %a.delete_answer{data: {div_id: "answer_#{child_index}"}}
+        = image_tag('icons/delete.png')
+
+:javascript
+
+  $('.delete_answer').on('click', function(){
+    var div_id = $(this).data('div-id');
+    $("#" + div_id).remove();
+  });
+
+  $('#answer').on('change', function(){
+    readURLBanner(this);
+  });
+
+  function readURLBanner(input) {
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
+      var image = document.createElement('img');
+      image.addEventListener('load', function() {
+      	var size = `${image.width}x${image.height}`
+      	if(parseInt(image.width) >= 1111280){
+      		document.getElementById("questions__answers__answer").value = null;
+      		$('#show-img').removeAttr('src');
+      		$("#errorModal #body-tittle").text("Image Banner");
+      		$("#errorModal #body").text("Error");
+      		$("#errorModal #body-down").text('The image must be of equal width 280 and a maximum of 1000 high.');
+      		$("#errorModal").modal('show');
+      	}
+      });
+      reader.onload = function (e) {
+      	var valid_image = e.target.result.toString().includes("data:image");
+      	if(valid_image){
+      		image.src = e.target.result;
+      		document.getElementById("questions__answers__answer").value = e.target.result;
+      		$('#show-img').attr('src', e.target.result);
+      	}
+      }
+      reader.readAsDataURL(input.files[0]);
+    }
+  }

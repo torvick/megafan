@@ -1,0 +1,18 @@
+%html
+  %head
+    %title Megafan
+    = csrf_meta_tags
+    = csp_meta_tag
+
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    %link{href: "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css", rel: "stylesheet"}
+    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag 'sidebar', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag 'validations', 'data-turbolinks-track': 'reload'
+
+  %body.body_login
+    %div.container
+      %div.authentication
+        %div#notifications.mt-4
+          = render partial: 'notifications/flash'
+        = yield

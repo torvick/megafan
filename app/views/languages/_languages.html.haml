@@ -1,0 +1,10 @@
+%table.table.responsive.text-center{id: 'table_desing'}
+  %thead
+    %th= t('general.name')
+    %th= t('general.description')
+    %th= t('general.value')
+    %th= t('buttons.edit')
+    %th= t('buttons.show')
+  %tbody
+    - if @languages.any?
+      = render partial: 'languages/language', collection: @languages

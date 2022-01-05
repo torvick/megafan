@@ -1,0 +1,9 @@
+%div.row
+  %div.col-9
+  %div.col-3.pb-3
+    = link_to t('sidebar.triviums.new'), new_trivium_path(), class: 'btn btn-primary'
+  %div.card
+    = render partial: 'triviums'
+
+:javascript
+  

@@ -1,0 +1,81 @@
+%div.form-group.col-4
+  %strong#error-name.error-msg
+    = f.text_field :name, class: 'form-input', required: true,id:"name",value: @trivium.name
+    %label.form-label{for: "name"}= t('general.name')
+    %p#text-name.hide= t('errors.name')
+
+%div.form-group.col-8
+  %strong#error-description.error-msg
+    = f.text_field :description, class: 'form-input', required: true,id:"description",value: @trivium.description
+    %label.form-label{for: "description"}= t('general.description')
+    %p#text-description.hide= t('errors.description')
+  
+%div.form-group.col-4
+  %strong#error-initial_date.error-msg
+    = f.date_field :initial_date, class: 'form-input', required: true,id:"initial_date",value: @trivium.initial_date.to_s.to_date
+    %label.form-label{for: "initial_date"}= t('general.initial_date')
+    %p#text-initial_date.hide= t('errors.initial_date')
+
+%div.form-group.col-4
+  %strong#error-finish_date.error-msg
+    = f.date_field :finish_date, class: 'form-input', required: true,id:"finish_date",value: @trivium.finish_date.to_s.to_date
+    %label.form-label{for: "finish_date"}= t('general.finish_date')
+    %p#text-finish_date.hide= t('errors.finish_date')
+
+%div.form-group-select.col-2.pt-2
+  %strong.error-msg{id: "error-dt_h"}
+    = f.select :dt_h, options_for_select(1..50,selected: @trivium.dt_h),{ include_blank: "" },{class: 'form-select', required: true}
+    %label.form-label{for: "dt_h"}= t('general.hours')
+    %p.hide{id: 'text-dt_h'}= t('errors.dt_h')
+
+%div.form-group-select.col-2.pt-2
+  %strong.error-msg{id: "error-dt_min"}
+    = f.select :dt_min, options_for_select(1..59,selected: @trivium.dt_min),{ include_blank: "" },{class: 'form-select', required: true}
+    %label.form-label{for: "dt_min"}= t('general.minuts')
+    %p.hide{id: 'text-dt_min'}= t('errors.dt_min')
+
+%div.form-group-select.col-4.pt-4
+  %strong.error-msg{id: "error-category_id"}
+    = f.select :category_id, options_for_select(Category.all.map {|c| [c.name, c.id] },selected: @trivium.category_id),{ include_blank: "" },{class: 'form-select', required: true}
+    %label.form-label{for: "category_id"}= t('general.category')
+    %p.hide{id: 'text-category_id'}= t('errors.category_id')
+
+%div.form-group-select.col-4.pt-4
+  %strong.error-msg{id: "error-language_id"}
+    = f.select :language_id, options_for_select(Language.all.map {|c| [c.name, c.id] },selected: @trivium.language_id),{ include_blank: "" },{class: 'form-select', required: true}
+    %label.form-label{for: "language_id"}= t('general.language')
+    %p.hide{id: 'text-language_id'}= t('errors.language_id')
+
+%div.col-4.pt-4.row
+  %div.col-3
+    %label.form-label{for: "status"}= t('general.status')
+  %div.col-9.form-check.form-switch
+    =f.check_box :status , id: 'status', class: 'form-check-input', checked: set_status(@trivium.status)
+    %label.form-check-label{for: "status"}
+      = t('status.actived')
+      ?
+  
+%div.row.pt-3
+  %div.col-12
+    %h1= t('general.questions')
+    #questions
+
+    %div.col-12
+      = render :partial => 'edit_question', collection: @trivium.questions
+
+  %div.col-12.pt-3
+    %a#bquestion.btn.btn-primary{style: 'color: white;padding: 1px;'}= t('buttons.add')
+
+%div.links.col-9.pt-4
+  %a.btn.btn-link{href: "/triviums"}= t('buttons.back')
+
+%div.button.col-3.pt-4
+  %button.btn.btn-primary= t('buttons.save')
+
+
+:javascript
+
+  $('#bquestion').on('click', function(){
+    var url = "#{add_question_triviums_url}";
+    $.get( url ); 
+  });

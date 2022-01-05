@@ -1,0 +1,30 @@
+%div.container
+  %div.row
+    %div.card
+      %div.row
+        %div.col-4.p-2
+          %h1=t('general.name')
+          %h2= @user.name
+
+        %div.col-4.p-2
+          %h1=t('general.last_name')
+          %h2= @user.last_name
+
+        %div.col-4.p-2
+          %h1=t('general.username')
+          %h2= @user.username
+    
+        %div.col-4.p-2
+          %h1=t('general.email')
+          %h2= @user.email
+    
+        %div.col-4.p-2
+          %h1=t('general.phone')
+          %h2= @user.phone
+    
+        %div.col-4.p-2
+          %h1=t('general.role')
+          %h2= @user.role.name
+    
+        %div.col-12
+          %a.btn.btn-primary{href: "/users"}= t('buttons.back')

@@ -1,0 +1,81 @@
+%div.card
+  %div.row
+
+    %div.col-2
+      %div.card_one
+        %div.card_home
+          %div.row
+            %div.col-12.icon
+              = image_tag 'icons/user-total.svg', class: 'icon-home'
+      
+            %div.col-12
+              %h1.font-white Total
+              %h1.font-white= @client_total
+  
+    %div.col-2
+      %div.card_two
+        %div.card_home
+          %div.row
+            %div.col-12.icon
+              = image_tag 'icons/user-active.svg', class: 'icon-home'
+      
+            %div.col-12
+              %h1= t('general.users_actived')
+              %h1.font-white= @cient_activated
+
+    %div.col-2
+      %div.card_three
+        %div.card_home
+          %div.row
+            %div.col-12.icon
+              = image_tag 'icons/user-organics.svg', class: 'icon-home'
+      
+            %div.col-12
+              %h1.font-white= t('general.organics')
+              %h1.font-white= @client_og
+  
+  
+    %div.col-2
+      %div.card_four
+        %div.card_home
+          %div.row
+            %div.col-12.icon
+              = image_tag 'icons/facebook.svg', class: 'icon-home'
+      
+            %div.col-12
+              %h1.font-white= t('general.facebook')
+              %h1.font-white= @client_fb
+    
+    %div.col-2
+      %div.card_four
+        %div.card_home
+          %div.row
+            %div.col-12.icon
+              = image_tag 'icons/instagram.svg', class: 'icon-home'
+      
+            %div.col-12
+              %h1.font-white= t('general.instagram')
+              %h1.font-white= @client_ig
+
+    %div.col-2
+      %div.card_four
+        %div.card_home
+          %div.row
+            %div.col-12.icon
+              = image_tag 'icons/tik-tok.svg', class: 'icon-home'
+      
+            %div.col-12
+              %h1.font-white= t('general.tik_tok')
+              %h1.font-white= @client_tk
+
+    %div.col-12.pt-4
+
+      %h1= t('general.graphics')
+
+      %canvas#myChart{width: "200px", height: "100px", "data-data": "#{@data}"}
+
+
+
+:javascript
+
+  

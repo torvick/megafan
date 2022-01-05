@@ -1,0 +1,15 @@
+%div.container
+  %div.row
+    %div.card
+      %div.row
+        %div.col-4.p-2
+          %h1=t('general.available')
+          %h2= balance.available
+
+        %div.col-4.p-2
+          %h1=t('general.total')
+          %h2= balance.total
+
+        %div.col-4.p-2
+          %h1=t('general.type')
+          %h2= balance.type_balance.name

@@ -1,0 +1,6 @@
+%div.row
+  %div.col-9
+  %div.col-3.pb-3
+    = link_to t('sidebar.categories.new'), new_category_path(), class: 'btn btn-primary'
+  %div.card
+    = render partial: 'categories'

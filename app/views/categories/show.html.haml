@@ -1,0 +1,19 @@
+%div.container
+  %div.row
+    %div.card
+      %div.row
+        %div.col-4.p-2
+          %h1=t('general.name')
+          %h2= @category.name
+
+        %div.col-4.p-2
+          %h1=t('general.description')
+          %h2= @category.description
+
+        %div.col-4.p-2
+          %h1=t('general.value')
+          %h2= @category.value
+    
+    
+        %div.col-12
+          %a.btn.btn-primary{href: "/categories"}= t('buttons.back')

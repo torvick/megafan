@@ -1,0 +1,84 @@
+en:
+  general:
+    name: 'Name'
+    last_name: 'Last Name'
+    email: 'Email'
+    password: 'Password'
+    privacy: 'Terms and Conditions'
+    clients: 'Clients'
+    users_actived: 'Users Act.'
+    facebook: 'Facebook'
+    instagram: 'Instagram'
+    tik_tok: 'Tik Tok'
+    organic: 'Organics'
+    questions: 'Questions'
+    answers: 'Answers'
+    question: 'Question'
+    answer: 'Answer'
+    answer_corrects: '# R Corrects'
+    correct: 'Correct'
+    dob: "Birthday"
+    triviums_lose: 'Trivias Lose'
+    triviums_winner: 'Trivias Winner'
+    available: "Available"
+    type: 'Type Balance'
+    gender: 'Gender'
+    country: 'Country'
+  graphics:
+    users_total: 'User Totals'
+    users_facebook: 'User Facebook'
+    users_instagram: 'User Instagram'
+    users_tiktok: 'User Tiktok'
+    users_organics: 'User Organics'
+  status:
+    actived: "Active"
+    inactived: "Inactive"
+    female: 'Female'
+    male: 'Male'
+    other: 'Other'
+  sidebar:
+    home:
+      title: 'Home'
+    users:
+      title: 'Users'
+      new: 'New User'
+      edit: 'Edit User'
+      list: 'List Users'
+      show: 'Show User'
+    categories:
+      title: 'Categories'
+      new: 'New Category'
+      edit: 'Edit Category'
+      list: 'List Categories'
+      show: 'Show Category'
+    language:
+      title: 'Languages'
+      new: 'New Language'
+      edit: 'Edit Language'
+      list: 'List Languages'
+      show: 'Show Language'
+    clients:
+      title: 'Clients'
+      list: 'List Clients'
+      show: 'Show Client'
+    triviums:
+      title: 'Trivias'
+      new: 'New Trivia'
+      edit: 'Edit Trivia'
+      list: 'List Trivias'
+      show: 'Show Trivia'
+    logout:
+      title: 'Logout'
+  buttons:
+    login: 'Login'
+    show: 'Show'
+    edit: 'Edit'
+    save: 'Save'
+    back: 'Back'
+    add: 'Add'
+  errors:
+    password: 'Minimum six characters, at least one uppercase letter, one lowercase letter, one number and one special character'
+    email: 'Enter a valid email'
+    phone: 'Enter a valid phone, phone must have only numbers'
+    confirmPassword: "The password and password of confirmation must be equal"
+  

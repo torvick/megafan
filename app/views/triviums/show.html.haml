@@ -1,0 +1,63 @@
+%div.container
+  %div.row
+    %div.card
+      %div.row
+        %div.col-4.p-2
+          %h1=t('general.name')
+          %h2= @trivium.name
+
+        %div.col-4.p-2
+          %h1=t('general.description')
+          %h2= @trivium.description
+
+        %div.col-4.p-2
+          %h1=t('general.initial_date')
+          %h2= @trivium.initial_date.strftime('%Y-%m-%d')
+    
+        %div.col-4.p-2
+          %h1=t('general.finish_date')
+          %h2= @trivium.finish_date.strftime('%Y-%m-%d')
+    
+        %div.col-4.p-2
+          %h1=t('general.status')
+          %h2= t("status.#{@trivium.status}")
+    
+        %div.col-4.p-2
+          %h1=t('general.duration')
+          %h2= "#{@trivium.dt_h} Hr #{@trivium.dt_min} Min"
+
+        %div.col-12
+          - number_q = 1
+          - @trivium.questions.each do |question|
+            %div.card
+              %div.row
+                %div.col-6
+                  %h1
+                    = t('general.question')
+                    = number_q
+                  %h2= question.question
+                %div.col-6
+                  %h1= t('general.answer_corrects')
+                  %h2= question.answer_corrects
+              - number_a = 1
+              - question.answers.each do |answer|
+                %div.card
+                  %div.row
+                    %div.col-6
+                      %h1
+                        = t('general.answer')
+                        = number_a
+                      - if answer.type_answer == 'img'
+                        %img{src: "#{answer.answer}", width: '100', height: '100'}
+                      - else
+                        %h2= answer.answer
+                    %div.col-6
+                      %h1= t('general.correct')
+                      %h2= answer.correct
+
+                - number_a+=1
+    
+            - number_q+=1
+    
+        %div.col-12.pt-4
+          %a.btn.btn-primary{href: "/triviums"}= t('buttons.back')

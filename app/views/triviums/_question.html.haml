@@ -1,0 +1,49 @@
+.del_question{id: "question_#{child_index}"}  
+  .m-1.p-1.border.rounded.box
+    %div.row
+      %div.form-group.col-8
+        %strong#error-question.error-msg
+          = text_field_tag 'questions[][question]',nil, {class: 'form-input', required: true,id:"question"}
+          %label.form-label{for: "question"}= t('general.question')
+          %p#text-question.hide= t('errors.question')
+
+      %div.form-group.col-2
+        %strong#error-name.error-msg
+          = number_field_tag 'questions[][answer_corrects]',nil, {class: 'form-input', required: true,id:"answer_corrects"}
+          %label.form-label{for: "answer_corrects"}= t('general.answer_corrects')
+          %p#text-answer_corrects.hide= t('errors.answer_corrects')
+
+      %div.col-2
+        %a.delete_question{data: {div_id: "question_#{child_index}"}}
+          =image_tag('icons/delete.png')
+
+      %div.col-12.pt-4{style: 'margin-left: 20px'}
+        %h1= t('general.answers')
+        #div{id: "answer_#{child_index}"}
+
+        %div.col-12.pt-5.pb-3
+          %a.btn.btn-primary{style: 'color: white;padding: 1px;',id: "banswer_text_#{child_index}"} Add Answers Text
+          %a.btn.btn-primary{style: 'color: white;padding: 1px;',id: "banswer_img_#{child_index}"} Add Answers Img
+          %a.btn.btn-primary{style: 'color: white;padding: 1px;',id: "banswer_fv_#{child_index}"} Add Answers F/V
+
+:javascript
+
+  $('.delete_question').on('click', function(){
+    var div_id = $(this).data('div-id');
+    $("#" + div_id).remove();
+  });
+
+  $("#banswer_text_#{child_index}").on('click', function(){
+    var url = "#{add_answer_triviums_url}"; 
+    $.get( url+"?question_index=#{child_index}&type=text" );
+  })
+
+  $("#banswer_img_#{child_index}").on('click', function(){
+    var url = "#{add_answer_triviums_url}"; 
+    $.get( url+"?question_index=#{child_index}&type=img" );
+  })
+
+  $("#banswer_fv_#{child_index}").on('click', function(){
+    var url = "#{add_answer_triviums_url}"; 
+    $.get( url+"?question_index=#{child_index}&type=bool" );
+  })

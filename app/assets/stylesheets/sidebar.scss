@@ -1,0 +1,270 @@
+@import '../../assets/stylesheets/tools/utilities';
+@import '../../assets/stylesheets/tools/variables';
+
+p {
+  font-size: 1.1em;
+  font-weight: 300;
+  line-height: 1.7em;
+  color: $color-gray;
+}
+
+a,
+a:hover,
+a:focus {
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.navbar {
+  padding-top: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+  background: transparent !important;
+  border: none;
+  border-radius: 0;
+}
+
+.navbar-btn {
+  box-shadow: none;
+  outline: none !important;
+  border: none;
+}
+
+.line {
+  width: 100%;
+  height: 1px;
+  border-bottom: 1px dashed #ddd;
+  margin: 40px 0;
+}
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+
+.wrapper {
+  display: flex;
+  width: 100%;
+}
+
+#sidebar {
+  padding-top: 15px;
+  width: 244px;
+  top: 0;
+  left: 0;
+  height: 98vh;
+  z-index: 999;
+  background: $color-white;
+  color: $color-white;
+  transition: all 0.3s;
+}
+
+#sidebar.active {
+  margin-left: -250px;
+}
+
+#sidebar .sidebar-header {
+  background: $color-white;
+}
+
+#sidebar ul p {
+  color: $color-white;
+  padding: 10px;
+}
+
+#sidebar ul{
+  list-style-type: none;
+}
+
+#sidebar ul li{
+    a{
+        text-align: left;
+        font-family: $monserrat;
+        font-weight: 300;
+    }
+
+    & > a{
+        position: relative;
+        transition: all 0.7s;
+
+        
+
+        &:hover{
+            -webkit-box-shadow: -3px 3px 8px 0px rgba(0,0,0,0.2);
+            -moz-box-shadow: -3px 3px 8px 0px rgba(0,0,0,0.2);
+            box-shadow: -3px 3px 8px 0px rgba(0,0,0,0.2);
+            border-left: 5px solid $color-yellow;
+            &:before{
+                width: 5px;
+            }
+        }
+    }
+
+    .sidebar-button-img{
+        width: 15px;
+        position: absolute;
+        left: 15%;
+        top: 0;
+        bottom: 0;
+        margin: auto 0;
+    }
+
+    .link-home{
+        font-size: $font-size + 2px;
+        color: $color-black;
+    }
+
+    .sidebar-button-bullet{
+        height: 15%;
+        width: auto;
+        position: absolute;
+        left: 18%;
+        top: 0;
+        bottom: 0;
+        margin: auto 0;
+    }
+}
+
+#sidebar ul li a {
+    padding: 12px 12px 12px 40%;
+    font-size: 0.9em;
+    display: block;
+}
+
+#sidebar  ul  ul a{
+    padding-left: 30% !important;
+    font-size: 11px !important;
+}
+
+#sidebar ul li a:hover {
+  color: $color-black;
+  font-weight: 400;
+}
+
+#sidebar > ul > li{
+    padding-left: 10%;
+
+    & > a{
+        font-weight: 500;
+        margin-top: 6%;
+        margin-bottom: 0;
+    }
+
+    &:hover > a{
+        margin-bottom: 0;
+    }
+}
+
+#sidebar ul li:hover.active>a{
+    background-color: $color-white;
+}
+
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
+.dropdown-toggle::after {
+    display: none;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+}
+
+ul.CTAs {
+    padding: 20px;
+}
+
+ul.CTAs a {
+    text-align: center;
+    font-size: 0.9em !important;
+    display: block;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+a.download {
+    background: $color-white;
+    color: $color-blue;
+}
+
+a.article,
+a.article:hover {
+    background: $color-blue !important;
+    color: $color-white !important;
+}
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+
+#content {}
+
+#content.active {
+    width: 100%;
+}
+
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -250px;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+    #content {
+        width: 100%;
+    }
+    #content.active {
+        width: calc(100% - 250px);
+    }
+    #sidebarCollapse span {
+        display: none;
+    }
+}
+
+
+/* ---------------------------------------------------
+    LOGO IMAGE
+----------------------------------------------------- */
+
+.logo{
+  padding: 10px;
+  background-color: $color-yellow;
+  h1{
+    font-size: $font-size + 6px;
+    font-family: $monserrat;
+    font-weight: 300;
+    color: $color-black;
+  }
+  h2{
+    font-size: $font-size;
+    font-family: $monserrat;
+    font-weight: 300;
+    color: $color-blue;
+  }
+  img{
+    width:  50%;
+    display: grid;
+    border-radius: 50%;
+  }
+}
+
+.logomenu{
+  border-radius: 0% 60px 0% 0%;
+  background: $color-white;
+  padding-top: 10px;
+}
+
+.active-sidebar{
+  background: transparent;
+  border: 1px solid $color-white
+}

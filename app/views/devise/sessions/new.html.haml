@@ -1,0 +1,24 @@
+
+= render partial: 'privacy'
+      
+%div.content
+  %div.col-6
+    %img{src: "https://lh3.googleusercontent.com/S1Z9u69NRTEkPuhJCClVtu03ScHDaQBzjjDqiqDm05aK8vlrAZuq3_k7G_OBwIVLdnfW", width: '200', height: '150', alt: ""}
+
+  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+    %div.form-group
+      %strong#error-email.error-msg
+        = f.email_field :email, class: 'form-input', required: true,id:"email"
+        %label.form-label{for: "email"}= t('login.input.email')
+        %p#text-email.hide= t('errors.email')
+
+    %div.form-group
+      %strong#error-password.error-msg
+        = f.password_field :password, class: 'form-input', required: true,id:"password"
+        %label.form-label{for: "password"}= t('register.inputs.password')
+        %p#text-password.hide= t('errors.password')
+
+    %div.col-12.pt-4
+      %button.btn.btn-login= t('buttons.login')
+
+  
