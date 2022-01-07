@@ -1318,7 +1318,6 @@ GEM
     concurrent-ruby (1.1.9)
     connection_pool (2.2.5)
     crass (1.0.6)
-    daemon (1.2.0)
     devise (4.8.1)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -1495,7 +1494,6 @@ DEPENDENCIES
   capistrano-sidekiq
   capistrano3-puma
   capybara (>= 3.26)
-  daemon
   devise
   devise-i18n
   haml (~> 5.2, >= 5.2.2)
